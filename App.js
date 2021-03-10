@@ -4,11 +4,12 @@ import {createAppContainer} from 'react-navigation'
 import {createStackNavigator} from 'react-navigation-stack'
 
 import MainScreen from './MainScreen'
+import AboutTheApp from './AboutTheApp'
 
 
 const StackNavigator = createStackNavigator(
   {
-    Screen1: {screen: MainScreen},
+    Screen1: {screen: AboutTheApp},
   },
   {
     headerMode: 'none'
