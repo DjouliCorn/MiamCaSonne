@@ -26,6 +26,7 @@ export default class MainScreen extends React.Component {
 <Text>Maintenant</Text>
 <Text>Lieu actuel</Text>
 </Body>
+
 <Right><Text>Icone</Text></Right>    
 </Content>
 <Content>
