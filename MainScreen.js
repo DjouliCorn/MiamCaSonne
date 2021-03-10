@@ -1,5 +1,6 @@
 import React from 'react';
-import { Text, View, Header, Container, Body, Item, Input } from 'native-base';
+import { StyleSheet } from 'react-native';
+import { Text, View, Header, Container, Body, Item, Input, Center, Left, Right, Content } from 'native-base';
 
 export default class MainScreen extends React.Component {
 
@@ -11,7 +12,7 @@ export default class MainScreen extends React.Component {
     style={{     
       ...Platform.select({
         ios: {
-          paddingTop: 12,
+          padding: 12,
         },
         android: {
           paddingTop: 15
@@ -19,19 +20,43 @@ export default class MainScreen extends React.Component {
       })
     }} >
 
+<Content style={styles.headerItemsContainer}>
+<Left><Text>Icone</Text></Left>      
+<Body>
+<Text>Maintenant</Text>
+<Text>Lieu actuel</Text>
+</Body>
+<Right><Text>Icone</Text></Right>    
+</Content>
+<Content>
+<Text>Livraison</Text>
+<Text>À emporter</Text>
+</Content>
+<Content>
 <Item>  
     <Input placeholder="Search" />
 </Item>
+<Text>Icone</Text>
+</Content>
 
 </Header>
 
-    <Body>  
+    <Content>  
         <View>
       <Text>Miam, ça sonne !</Text>
         </View>
-    </Body>  
+    </Content>  
 </Container>
   
   )
     }
 }
+
+const styles = StyleSheet.create({
+
+
+  headerItemsContainer: {
+  
+  }
+
+});
