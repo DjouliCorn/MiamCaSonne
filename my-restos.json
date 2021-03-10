@@ -1,0 +1,271 @@
+
+[
+    {
+        "name":"Burger King",
+        "image":"PATH",
+        "categories": [
+            "Burgers",
+            "sandwichs"
+        ],
+        "distance":3.15,
+        "adress": "3 boulevard de Rome",
+        "score": 4.2,
+        "deliver":true,
+        "takeAway":true,
+        "info":"https://www.burgerking.fr/",
+        "discount":null,
+        "products":[
+            {
+                "menu":[
+                    {
+                        "name":"Menu Master Cantal",
+                        "description":"Un super Burger au cantal, frites , et sa boissons",
+                        "price":13.80
+                    },
+                    {
+                        "name":"Menu Double French Stackhouse",
+                        "description":"Une double dose de Steak charolais pour un maximum de plaisirs, frites , et sa boissons",
+                        "price":12.90
+                    }
+                ]
+            },
+            {
+                "burgers":[
+                    {
+                        "name": "Triple Cheese",
+                        "description": "trois fois plus de fromage pour trois fois plus de plaisir",
+                        "price":5.30
+                    },
+                    {
+                        "name":"Whopper",
+                        "description":"Une recette mythique et inchangée",
+                        "price":5.80
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name":"Mc Donalds",
+        "image":"PATH",
+        "categories": [
+            "Burgers",
+            "Sandwichs"
+        ],
+        "distance":6.60,
+        "adress":"57 rue de Paris",
+        "score":3.6,
+        "deliver":true,
+        "takeAway":true,
+        "info":"https://www.mcdonalds.fr/",
+        "discount":null,
+        "products":[
+            {
+                "menu":[
+                    {
+                        "name":"Menu Big Mac",
+                        "description":"L'incontournable et sa rectte secrète, frites , et sa boissons",
+                        "price":9.50
+                    },
+                    {
+                        "name":"Menu McFirst",
+                        "description":"Un menu accessible et complet (frites + boissons)",
+                        "price":4.90
+                    }
+                ]
+            },
+            {
+                "burgers":[
+                    {
+                        "name": "Chicken Avocado",
+                        "description": "Spécialité panée au poulet et purée d'avocat épicée",
+                        "price":4.40
+                    },
+                    {
+                        "name":"Le p'tit Ranch",
+                        "description":"Un wrap au saver d'Amérique",
+                        "price":5.20
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name":"Soprano",
+        "image":"PATH",
+        "categories": [
+            "pizza", "Italien"
+        ],
+        "distance":3.76,
+        "adress":"19 rue Jean Laurent",
+        "score":4.4,
+        "deliver":false,
+        "takeAway":true,
+        "info":"https://www.soprano-restaurant.fr/",
+        "discount":null,
+        "products":[
+            {
+                "pizza":[
+                    {
+                        "name":"Calzone",
+                        "description":"Sauce tomate, mozzarella, jambon, champignons, oeuf",
+                        "price":15.0
+                    },
+                    {
+                        "name":"Montagna",
+                        "description":"Crême fraîche, mozzarella, pancetta, oignons, reblochon, origan.",
+                        "price":14.90
+                    }
+                ]
+            },
+            {
+                "dish":[
+                    {
+                        "name": "Risotto Bonto",
+                        "description": "Tomates, mozzarella, crème fraîche, bonite",
+                        "price":17.0
+                    },
+                    {
+                        "name":"Tagliatelle Au Saumon",
+                        "description":"Saumon provenance: Mer du Nord",
+                        "price":17.0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name":"Domino's Pizza",
+        "image":"PATH",
+        "categories": [
+            "pizza", "Tacos"
+        ],
+        "distance":1.06,
+        "adress":"34 Avenue de l'Amiral Leumonnier",
+        "score":4.1,
+        "deliver":true,
+        "takeAway":true,
+        "info":"https://www.dominos.fr/",
+        "discount": "-20% sur l'achat de 3 pizzas ! ",
+        "products":[
+            {
+                "pizza":[
+                    {
+                        "name":"Cannibale",
+                        "description":"Sauce barbecue, mozzarella, poulet roti, merguez, boulette de boeuf.",
+                        "price":8.90
+                    },
+                    {
+                        "name":"Reine",
+                        "description":"Sauce tomate, mozzarella, jambon, champignons",
+                        "price":7.90
+                    }
+                ]
+            },
+            {
+                "dish":[
+                    {
+                        "name": "Risotto Bonto",
+                        "description": "Tomates, mozzarella, crème fraîche, bonite",
+                        "price":17.0
+                    },
+                    {
+                        "name":"Tagliatelle Au Saumon",
+                        "description":"Saumon provenance: Mer du Nord",
+                        "price":17.0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name":"Miyoshi",
+        "image":"PATH",
+        "categories": [
+            "Sushi", "Japonais"
+        ],
+        "distance":2.77,
+        "adress":"90 Avenue du maréchal foch",
+        "score":4.2,
+        "deliver":true,
+        "takeAway":true,
+        "info":"tel: +33 1 34 51 15 09",
+        "discount": null,
+        "products":[
+            {
+                "menu":[
+                    {
+                        "name":"Menu brochette A",
+                        "description":"Soupe, salade et riz avec 6 brochettes (poulet, aile poulet, boeuf fromage...)",
+                        "price":13.90
+                    },
+                    {
+                        "name":"Menu tempura 1",
+                        "description":"Tempura pouletavec soupe, salade et riz sauce aigre douce",
+                        "price":14.50
+                    }
+                ]
+            },
+            {
+                "sushi":[
+                    {
+                        "name": "Sushi saumon",
+                        "description": "Servis par paire, sauce au choix",
+                        "price":4.80
+                    },
+                    {
+                        "name":"Sushi thon",
+                        "description":"Servis par paire, sauce au choix",
+                        "price":5.70
+                    }
+                ]
+            }
+
+        ]
+    },
+    {
+        "name":"Sushi Wako 78",
+        "image":"PATH",
+        "categories": [
+            "Sushi", "Japonais"
+        ],
+        "distance":3.03,
+        "adress":"137 boulevard Carnot",
+        "score":4.4,
+        "deliver":true,
+        "takeAway":false,
+        "info":"tel: +33 1 78 51 90 09",
+        "discount": null,
+        "products":[
+            {
+                "menu":[
+                    {
+                        "name":"S3 Menu sushi duo",
+                        "description":"8 sushis: 4 saumons/ 4 thons, 1 soupe, 1 salade",
+                        "price":16.50
+                    },
+                    {
+                        "name":"M1 Menu biwa",
+                        "description":"24 Makis végétarien: 8 concombre, 8 radis, 8 avocat, 1 soupe, 1 salade",
+                        "price":15.0
+                    }
+                ]
+            },
+            {
+                "sushi":[
+                    {
+                        "name": "Sushi saumon",
+                        "description": "Servis par paire, sauce au choix",
+                        "price":4.80
+                    },
+                    {
+                        "name":"Sushi thon",
+                        "description":"Servis par paire, sauce au choix",
+                        "price":5.0
+                    }
+                ]
+            }
+
+        ]
+    }
+]
