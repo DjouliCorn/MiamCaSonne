@@ -8,8 +8,8 @@ export default class MainScreen extends React.Component {
   return (
 
     <Container>
-    <Header searchBar
-    style={{     
+      <Header searchBar
+      style={{     
       ...Platform.select({
         ios: {
           padding: 12,
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
 
 
   headerItemsContainer: {
-  
+    color: 'white'
   }
 
 });
