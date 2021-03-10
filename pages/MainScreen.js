@@ -8,8 +8,8 @@ export default class MainScreen extends React.Component {
   return (
 
     <Container>
-    <Header searchBar
-    style={{     
+      <Header searchBar
+      style={{     
       ...Platform.select({
         ios: {
           padding: 12,
@@ -19,25 +19,24 @@ export default class MainScreen extends React.Component {
         }
       })
     }} >
-
-<Content style={styles.headerItemsContainer}>
-<Left><Text>Icone</Text></Left>      
-<Body>
-<Text>Maintenant</Text>
-<Text>Lieu actuel</Text>
-</Body>
-<Right><Text>Icone</Text></Right>    
-</Content>
-<Content>
-<Text>Livraison</Text>
-<Text>À emporter</Text>
-</Content>
-<Content>
-<Item>  
-    <Input placeholder="Search" />
-</Item>
-<Text>Icone</Text>
-</Content>
+      <Content style={styles.headerItemsContainer}>
+        <Left><Text>Icone </Text></Left>      
+        <Body>
+          <Text>Maintenant</Text>
+          <Text>Lieu actuel</Text>
+        </Body>
+        <Right><Text>Icone</Text></Right>    
+      </Content>
+      <Content>
+        <Text>Livraison</Text>
+        <Text>À emporter</Text>
+      </Content>
+      <Content>
+        <Item>  
+            <Input placeholder="Search" />
+        </Item>
+      <Text>Icone</Text>
+      </Content>
 
 </Header>
 
@@ -56,7 +55,7 @@ const styles = StyleSheet.create({
 
 
   headerItemsContainer: {
-  
+    color: 'white'
   }
 
 });
