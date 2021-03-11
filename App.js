@@ -28,7 +28,6 @@ export default class App extends React.Component {
   }
 }
   
-  =======
 /*import React from 'react';
 import { StyleSheet, SafeAreaView, ScrollView, RefreshControl } from 'react-native';
 import CategorieSlider from './components/categorieSlider';
