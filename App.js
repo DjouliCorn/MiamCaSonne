@@ -1,4 +1,34 @@
-import React from 'react';
+
+
+import * as React from 'react';
+import {createAppContainer} from 'react-navigation'
+import {createStackNavigator} from 'react-navigation-stack'
+
+import MainScreen from './MainScreen'
+import AboutTheApp from './AboutTheApp'
+
+
+const StackNavigator = createStackNavigator(
+  {
+    Screen1: {screen: MainScreen},
+    ScreenAbout: {screen: AboutTheApp},
+  },
+  {
+    headerMode: 'none'
+  }
+)
+
+const AppContainer = createAppContainer(StackNavigator);
+
+
+export default class App extends React.Component {
+  
+  render(){
+    return <AppContainer/>
+  }
+}
+  
+/*import React from 'react';
 import { StyleSheet, SafeAreaView, ScrollView, RefreshControl } from 'react-native';
 import CategorieSlider from './components/categorieSlider';
 import BannSlider from './components/bannSlider';
