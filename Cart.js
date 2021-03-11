@@ -1,81 +1,115 @@
-import React from 'react';
-import { StyleSheet, TouchableOpacity } from 'react-native';
-import { Text, View, Header, Container, Left, Content, Footer } from 'native-base';
-import {Ionicons} from '@expo/vector-icons';
+import * as React from 'react';
+import { Text, StyleSheet, TouchableOpacity, View } from 'react-native';
+import {Header, Container, Content, List, ListItem, Left, Right, Body} from 'native-base';
+import { MaterialIcons, Ionicons  } from '@expo/vector-icons'; 
+
 
 export default class Cart extends React.Component {
-
   render(){
   return (
+    <Container>
+    <Header style={styles.headerStyle}> 
+    <View style={styles.flexStyle}>
+      <TouchableOpacity onPress={() => this.props.navigation.navigate('Screen1')}>
+      <Ionicons name="arrow-back" size={32} style={styles.trash} />
+      </TouchableOpacity>
+      <Text style={styles.titreStyle}>Mon panier</Text> 
+      <TouchableOpacity>
+      <Ionicons name="trash-outline" size={25} style={styles.trash} />
+      </TouchableOpacity>
+      </View>
+    </Header>
 
     <Container>
-    <Header
-    style={{     
-      ...Platform.select({
-        ios: {
-          padding: 12,
-        },
-        android: {
-          paddingTop: 15
-        }
-      })
-    }} >
-
-  <TouchableOpacity
-    onPress={() => this.props.navigation.navigate('Screen1')}
-  >
-    <Ionicons name="arrow-back" size={20} color='#00CDBC' paddingRigth='10'/>
-  </TouchableOpacity>
-  <Text style={styles.aboutAppTextHeader}>Mon panier</Text>
-  <Text>Nom du restau selectionné</Text>
-
-</Header>
-
-    <View style={styles.aboutAppBody}>  
-    <Text></Text>
-    </View>  
+      <View style={styles.contentTimeDelivery}>
+      <MaterialIcons name="delivery-dining" size={45} color="#00CDBC"/>
+      <Text style={styles.textContentItemDelivery}>Livraison dans 20-25 min.</Text>
+      </View>
 
 
-</Container>
-  
-  )
-    }
+      <View>
+        <TouchableOpacity>
+        <Text style={styles.textCondParticulier}>Précisions particulières sur la commande</Text>
+        </TouchableOpacity>
+      </View>
+
+      <Text style={styles.articlesText} >Articles</Text>
+      <View style={styles.contentTimeDelivery}>
+      <Text style={styles.quantityText} >QTÉ</Text>
+      <Text style={styles.textContentItemDelivery}>Plat séléctionné
+      </Text>
+      <Text style={styles.textContentItemDelivery}>Prix</Text>
+      </View>
+
+ 
+
+
+
+    </Container>
+
+
+
+    </Container>
+    
+    );
+  }
 }
 
 const styles = StyleSheet.create({
-  aboutAppBody:{
-    borderColor: 'black',
-    margin : 5,
-    padding : 15
-  }, 
-  aboutAppText: {
-    fontSize:15,
-    paddingLeft:15,
-    paddingBottom:15
-  },
-  aboutAppTouchable:{
-    flexDirection:'row'
-  }, 
-
-  aboutAppTextFooter:{
-    color:'#00CDBC',
-    fontWeight:'bold',
-  }, 
-
-  aboutAppTextFooterPadding:{
-    paddingBottom:20
+  headerStyle:{
+      backgroundColor: 'white',
   },
 
-  aboutAppTextHeader:{
-    fontWeight:'bold',
-    paddingLeft:10
-  }, 
-  aboutAppFooter:{
+  flexStyle: {
     flex:1,
-    flexDirection:'column',
-    padding:25
-    
+    flexDirection:'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
 
+trash:{
+    color: "#00CDBC",
+    textTransform: 'uppercase',
+  },
+
+titreStyle:{
+  fontWeight: "bold",
+  fontSize: 15,
+  
+},
+contentPosition:{
+  marginTop:20,
+},
+
+contentTimeDelivery:{
+  flexDirection:'row',
+  alignItems:'center',
+  paddingLeft:15,
+  paddingTop:20,
+  paddingBottom:40,
+},
+
+textContentItemDelivery :{
+  paddingLeft:30, 
+  fontSize:17,
+
+}, 
+
+textCondParticulier: {
+  color: "#00CDBC",
+  paddingLeft:15,
+  paddingBottom:45,
+  fontSize:17
+},
+quantityText:{
+  color:'#00CDBC', 
+  paddingLeft:10},
+
+  articlesText:{
+    fontSize: 17,
+    fontWeight:'bold',
+    paddingLeft:15
   }
 
-});
+
+})
