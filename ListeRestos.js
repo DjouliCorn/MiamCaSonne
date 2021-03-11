@@ -2,7 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Image, Dimensions, FlatList, ScrollView, SafeAreaView, TouchableOpacity } from 'react-native';
 import Constants from 'expo-constants';
-import apirestos from './apirestos'
+import apirestos from './apirestos';
+import PageResto from './PageResto';
+import { withNavigation } from 'react-navigation';
 
 const {width, height} = Dimensions.get('screen');
 const api = apirestos.create();
@@ -14,6 +16,7 @@ export default class ListeRestos extends React.Component {
     }
     constructor(props){
         super(props);
+
         this.state = {
             
             dataSource: []
@@ -30,20 +33,28 @@ export default class ListeRestos extends React.Component {
         //console.log('liste Restos:', JSON.stringify(listeRestos))
     }
 
+ 
+
     render(){
         return(
+            
             <View style={{ flex: 1, paddingTop: 20 }}>
 
                 <FlatList
                     data={this.state.listeRestos}
-                    renderItem={({ item }) => 
+            
+                    renderItem={({ item, index }) => 
                     <View>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('PageResto')}>
                         <Text>{item.name}</Text>
                         <Image source = {{uri: item.image}} style={styles.image}></Image>
+                        </TouchableOpacity>
                     </View>
-                }                   
+                    }      
+                    keyExtractor={(item, index) => index.toString()}
                 />
             </View>
+
         )
     }
 }
@@ -69,36 +80,3 @@ const styles = StyleSheet.create({
         borderRadius: 12
       },
   });
-
-/*const DATA = [
-    {
-      id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
-      title: "First Item",
-    },
-    {
-      id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
-      title: "Second Item",
-    },
-    {
-      id: "58694a0f-3da1-471f-bd96-145571e29d72",
-      title: "Third Item",
-    },
-  ];
-
-export default () => {
-    
-    return(
-        <View>
-            <StatusBar hidden />
-            <FlatList>
-            
-
-                <Text>
-                    Hello People
-                </Text>
-            
-            </FlatList>
-        </View>
-    )
-    
-    }*/
