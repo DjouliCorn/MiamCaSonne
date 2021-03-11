@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image, Dimensions, FlatList, ScrollView, SafeAreaView, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, Dimensions, FlatList, TouchableOpacity } from 'react-native';
 const {width, height} = Dimensions.get('screen');
 
 
@@ -20,14 +20,14 @@ const styles = StyleSheet.create({
 })
 
 const categorie =[
-  'http://puu.sh/Ho1gC/162cb11f8c.png',
-  'http://puu.sh/Ho1fd/74991b1e6d.png',
-  'http://puu.sh/Ho1fw/b7b20fd570.png',
-  'http://puu.sh/Ho1fW/93c513e9a7.png',
-  'http://puu.sh/Ho1g4/bf44cb18a9.png',
-  'http://puu.sh/Ho1gc/be24a5e772.png',
-  'http://puu.sh/Ho1gq/ddf771d57d.png',
-  'http://puu.sh/Ho1gw/d71ff80dfe.png',
+'https://zupimages.net/up/21/10/v2qv.png',
+'https://zupimages.net/up/21/10/eqv3.png',
+'https://zupimages.net/up/21/10/i30x.png',
+'https://zupimages.net/up/21/10/qqb4.png',
+'https://zupimages.net/up/21/10/h1rs.png',
+'https://zupimages.net/up/21/10/sqtc.png',
+'https://zupimages.net/up/21/10/teg7.png',
+'https://zupimages.net/up/21/10/pg8d.png',
   
 ]
 
@@ -43,10 +43,13 @@ const imageH = imageW * 1.5;
         data = {categorie}
         keyExtractor={(_, index)=> index.toString()} 
         horizontal
-        renderItem = {({item}) => {
+
+        renderItem = {({item, index}) => {
           return <View style={styles.scrollview}>
-            <TouchableOpacity>
+            <TouchableOpacity key={index}>
+
             <Image source={{uri: item}} style={styles.image}/>
+            
             </TouchableOpacity>
             
           </View>

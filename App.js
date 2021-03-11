@@ -1,10 +1,10 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { StyleSheet, SafeAreaView, ScrollView, RefreshControl } from 'react-native';
+import { StyleSheet, SafeAreaView, ScrollView, RefreshControl, View } from 'react-native';
 import CategorieSlider from './components/categorieSlider';
 import BannSlider from './components/bannSlider';
-
-
+import MoyenPaiement from './components/moyenPaiement'
+import { Container } from 'native-base';
 
 const wait = (timeout) => {
   return new Promise(resolve => setTimeout(resolve, timeout));
@@ -19,19 +19,24 @@ export default function App() {
     wait(2000).then(() => setRefreshing(false));
   }, []);
 
-  return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView 
-      refreshControl={
-        <RefreshControl
-          refreshing={refreshing}
-          onRefresh={onRefresh}
-        />
-      }>
-      <CategorieSlider />
-      <BannSlider />
-      </ScrollView>   
-    </SafeAreaView>
+  /*<SafeAreaView style={styles.container}>
+  <ScrollView 
+  refreshControl={
+    <RefreshControl
+      refreshing={refreshing}
+      onRefresh={onRefresh}
+    />
+  }>
+  <CategorieSlider />
+  <BannSlider />
+  </ScrollView>   
+</SafeAreaView>*/
+
+
+  return ( 
+  
+  <MoyenPaiement />
+  
   
   );
  
