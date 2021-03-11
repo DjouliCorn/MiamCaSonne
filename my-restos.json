@@ -2,7 +2,7 @@
 [
     {
         "name":"Burger King",
-        "image":"PATH",
+        "image":"../assets/img-resto/bKing.jpeg",
         "categories": [
             "Burgers",
             "sandwichs"
@@ -20,12 +20,14 @@
                     {
                         "name":"Menu Master Cantal",
                         "description":"Un super Burger au cantal, frites , et sa boissons",
-                        "price":13.80
+                        "price":13.80,
+                        "imageDish": "../assets/img-dish/mCantal.jpeg"
                     },
                     {
                         "name":"Menu Double French Stackhouse",
                         "description":"Une double dose de Steak charolais pour un maximum de plaisirs, frites , et sa boissons",
-                        "price":12.90
+                        "price":12.90,
+                        "imageDish": "../assets/img-dish/steakhouse.jpeg"
                     }
                 ]
             },
@@ -34,12 +36,14 @@
                     {
                         "name": "Triple Cheese",
                         "description": "trois fois plus de fromage pour trois fois plus de plaisir",
-                        "price":5.30
+                        "price":5.30,
+                        "imageDish": "../assets/img-dish/tripleC.jpeg"
                     },
                     {
                         "name":"Whopper",
                         "description":"Une recette mythique et inchangée",
-                        "price":5.80
+                        "price":5.80,
+                        "imageDish": "../assets/img-dish/whopper.jpeg"
                     }
                 ]
             }
@@ -47,7 +51,7 @@
     },
     {
         "name":"Mc Donalds",
-        "image":"PATH",
+        "image":"../assets/img-resto/mcdo.jpeg",
         "categories": [
             "Burgers",
             "Sandwichs"
@@ -65,12 +69,17 @@
                     {
                         "name":"Menu Big Mac",
                         "description":"L'incontournable et sa rectte secrète, frites , et sa boissons",
-                        "price":9.50
+                        "price":9.50,
+                        "imageDish": "../assets/img-dish/MBigMac.jpeg"
+                        
+                        
                     },
                     {
                         "name":"Menu McFirst",
                         "description":"Un menu accessible et complet (frites + boissons)",
-                        "price":4.90
+                        "price":4.90,
+                        "imageDish": "../assets/img-dish/mMcFirst.jpeg"
+
                     }
                 ]
             },
@@ -79,12 +88,16 @@
                     {
                         "name": "Chicken Avocado",
                         "description": "Spécialité panée au poulet et purée d'avocat épicée",
-                        "price":4.40
+                        "price":4.40,
+                        "imageDish": "../assets/img-dish/chickAvoc.png"
+
                     },
                     {
                         "name":"Le p'tit Ranch",
                         "description":"Un wrap au saver d'Amérique",
-                        "price":5.20
+                        "price":5.20,
+                        "imageDish": "../assets/img-dish/ptitRanch.jpeg"
+
                     }
                 ]
             }
@@ -92,7 +105,7 @@
     },
     {
         "name":"Soprano",
-        "image":"PATH",
+        "image":"../assets/img-resto/soprano.jpeg",
         "categories": [
             "pizza", "Italien"
         ],
@@ -109,13 +122,14 @@
                     {
                         "name":"Calzone",
                         "description":"Sauce tomate, mozzarella, jambon, champignons, oeuf",
-                        "price":15.0
+                        "price":15.0,
+                        "imageDish": "../assets/img-resto/calzone.jpeg"
                     },
                     {
                         "name":"Montagna",
                         "description":"Crême fraîche, mozzarella, pancetta, oignons, reblochon, origan.",
-                        "price":14.90
-                    }
+                        "price":14.90,
+                        "imageDish":"../assets/img-dish/montagna.jpeg"                    }
                 ]
             },
             {
@@ -123,12 +137,14 @@
                     {
                         "name": "Risotto Bonto",
                         "description": "Tomates, mozzarella, crème fraîche, bonite",
-                        "price":17.0
+                        "price":17.0,
+                        "imageDish":"../assets/img-dish/risotto.jpeg" 
                     },
                     {
                         "name":"Tagliatelle Au Saumon",
                         "description":"Saumon provenance: Mer du Nord",
-                        "price":17.0
+                        "price":17.0,
+                        "imageDish":"../assets/img-dish/tagSaumon.jpeg" 
                     }
                 ]
             }
@@ -136,7 +152,7 @@
     },
     {
         "name":"Domino's Pizza",
-        "image":"PATH",
+        "image":"../assets/img-resto/domPizza.jpeg",
         "categories": [
             "pizza", "Tacos"
         ],
@@ -153,26 +169,28 @@
                     {
                         "name":"Cannibale",
                         "description":"Sauce barbecue, mozzarella, poulet roti, merguez, boulette de boeuf.",
-                        "price":8.90
+                        "price":8.90,
+                        "imageDish":"../assets/img-dish/cannibale.jpeg" 
                     },
                     {
                         "name":"Reine",
                         "description":"Sauce tomate, mozzarella, jambon, champignons",
-                        "price":7.90
+                        "price":7.90,
+                        "imageDish":"../assets/img-dish/reine.jpeg" 
                     }
                 ]
             },
             {
-                "dish":[
+                "snack":[
                     {
-                        "name": "Risotto Bonto",
-                        "description": "Tomates, mozzarella, crème fraîche, bonite",
-                        "price":17.0
+                        "name": "Kick'n Chicken",
+                        "description": "20 morceaux de blancs de poulet marinés.",
+                        "price":5.2
                     },
                     {
-                        "name":"Tagliatelle Au Saumon",
-                        "description":"Saumon provenance: Mer du Nord",
-                        "price":17.0
+                        "name":"Buffalo wings",
+                        "description":"20 ailerons de poulet marinés grillés. 3 sauces aux choix",
+                        "price":6.20
                     }
                 ]
             }
@@ -180,7 +198,7 @@
     },
     {
         "name":"Miyoshi",
-        "image":"PATH",
+        "image":"../assets/img-resto/miyoshi.jpeg",
         "categories": [
             "Sushi", "Japonais"
         ],
@@ -197,12 +215,14 @@
                     {
                         "name":"Menu brochette A",
                         "description":"Soupe, salade et riz avec 6 brochettes (poulet, aile poulet, boeuf fromage...)",
-                        "price":13.90
+                        "price":13.90,
+                        "imageDish":"../assets/img-dish/mBrochetteA.jpeg" 
                     },
                     {
                         "name":"Menu tempura 1",
                         "description":"Tempura pouletavec soupe, salade et riz sauce aigre douce",
-                        "price":14.50
+                        "price":14.50,
+                        "imageDish":"../assets/img-dish/mTempura1.jpeg" 
                     }
                 ]
             },
@@ -211,12 +231,14 @@
                     {
                         "name": "Sushi saumon",
                         "description": "Servis par paire, sauce au choix",
-                        "price":4.80
+                        "price":4.80,
+                        "imageDish":"../assets/img-dish/saumonSushi.jpeg"
                     },
                     {
                         "name":"Sushi thon",
                         "description":"Servis par paire, sauce au choix",
-                        "price":5.70
+                        "price":5.70,
+                        "imageDish":"../assets/img-dish/thonSushi.jpeg"
                     }
                 ]
             }
@@ -225,7 +247,7 @@
     },
     {
         "name":"Sushi Wako 78",
-        "image":"PATH",
+        "image":"../assets/img-resto/sushiWako.jpeg",
         "categories": [
             "Sushi", "Japonais"
         ],
@@ -242,12 +264,14 @@
                     {
                         "name":"S3 Menu sushi duo",
                         "description":"8 sushis: 4 saumons/ 4 thons, 1 soupe, 1 salade",
-                        "price":16.50
+                        "price":16.50,
+                        "imageDish":"../assets/img-dish/mDuo.jpeg"
                     },
                     {
                         "name":"M1 Menu biwa",
                         "description":"24 Makis végétarien: 8 concombre, 8 radis, 8 avocat, 1 soupe, 1 salade",
-                        "price":15.0
+                        "price":15.0,
+                        "imageDish":"../assets/img-dish/mBiwa.jpeg"
                     }
                 ]
             },
@@ -256,12 +280,14 @@
                     {
                         "name": "Sushi saumon",
                         "description": "Servis par paire, sauce au choix",
-                        "price":4.80
+                        "price":4.80,
+                        "imageDish":"../assets/img-dish/saumonSushi.jpeg"
                     },
                     {
                         "name":"Sushi thon",
                         "description":"Servis par paire, sauce au choix",
-                        "price":5.0
+                        "price":5.0,
+                        "imageDish":"../assets/img-dish/thonSushi.jpeg"
                     }
                 ]
             }
