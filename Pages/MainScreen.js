@@ -1,6 +1,10 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
-import { Text, View, Header, Container, Body, Item, Input, Center, Left, Right, Content } from 'native-base';
+import { StyleSheet,Image } from 'react-native';
+import { Text, View, Header, Container, Body, Item, Input, Center, Left, Right, Content, Button, Subtitle, Title } from 'native-base';
+
+import logoDeli from '../assets/img/food-delivery.png'
+import logoUser from '../assets/img/user.png'
+import arrowBas from '../assets/img/arrowBas.png'
 
 export default class MainScreen extends React.Component {
 
@@ -8,54 +12,54 @@ export default class MainScreen extends React.Component {
   return (
 
     <Container>
-      <Header searchBar
-      style={{     
-      ...Platform.select({
-        ios: {
-          padding: 12,
-        },
-        android: {
-          paddingTop: 15
-        }
-      })
-    }} >
-      <Content style={styles.headerItemsContainer}>
-        <Left><Text>Icone </Text></Left>      
-        <Body>
-          <Text>Maintenant hello</Text>
-          <Text>Lieu actuel</Text>
-        </Body>
-        <Right><Text>Icone</Text></Right>    
-      </Content>
-      <Content>
-        <Text>Livraison</Text>
-        <Text>À emporter</Text>
-      </Content>
-      <Content>
-        <Item>  
-            <Input placeholder="Search" />
-        </Item>
-      <Text>Icone</Text>
-      </Content>
-
-</Header>
-
-    <Content>  
-        <View>
-      <Text>Miam, ça sonne hdeie!</Text>
-        </View>
-    </Content>  
-</Container>
+      <Header style={styles.header} >       
+          <Container style={styles.headerItemsContainer}>
+            <Left>
+              <Button transparent>
+                <Image source={logoDeli} style={styles.logoStyle}/>
+                <Subtitle>Maintenant</Subtitle>
+                <Content>
+                  <Text>Lieu actuel</Text>
+                  <Image source={arrowBas} style={styles.logoStyle}/>              
+                </Content>                
+              </Button>
+            </Left>     
+          </Container>
+      </Header>
+  </Container>
   
   )
     }
 }
 
 const styles = StyleSheet.create({
-
-
+ //HEADER 
+  header:{    
+    flexDirection:'column',
+    height:130,
+    justifyContent:"flex-start",
+    ...Platform.select({
+      ios: {
+        padding: 12,
+      },
+      android: {
+        paddingTop: 15
+      }
+    })
+  },
   headerItemsContainer: {
-    color: 'white'
+    flex:1,
+    flexDirection:"row",
+    
+  },
+  button:{
+    
+    
+  },
+  logoStyle: {
+    
+    width : 50,
+    height: 50,
+    resizeMode:"contain"
   }
-
 });
