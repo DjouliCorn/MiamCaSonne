@@ -37,7 +37,10 @@ export default class App extends React.Component {
                 <FlatList
                     data={this.state.listRestos}
                     keyExtractor={(item, index) => index}
-                    renderItem={({ item, index }) => <Text>{item[index].name}</Text>}
+                    renderItem={({ item, index }) => <Text>{item.name}</Text>,
+                    <Image
+                    source={require({image})}
+                />}
                     
                 />
             </View>
