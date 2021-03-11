@@ -23,7 +23,7 @@ export default class MainScreen extends React.Component {
 
 
 
-    <Content>  
+   
         <NView>
       <Button 
           onPress={() => this.props.navigation.navigate('ScreenAbout')} 
@@ -44,7 +44,6 @@ export default class MainScreen extends React.Component {
           title='Moyen de paiement'
       />      
         </NView>
-    </Content>  
 </Container>
   
   )

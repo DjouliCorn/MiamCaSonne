@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Text, StyleSheet, TouchableOpacity, View } from 'react-native';
-import {Header, Container, Content, List, ListItem, Left, Right, Body} from 'native-base';
+import {Header, Container, Button} from 'native-base';
 import { MaterialIcons, Ionicons  } from '@expo/vector-icons'; 
 
 
@@ -41,8 +41,11 @@ export default class Cart extends React.Component {
       <Text style={styles.textContentItemDelivery}>Prix</Text>
       </View>
 
- 
-
+      <View>
+      <Button full style={styles.cartValidateButton}
+      onPress={() => this.props.navigation.navigate('ScreenPayment')} 
+      ><Text>Finaliser la commande</Text></Button>
+      </View>
 
 
     </Container>
@@ -109,6 +112,12 @@ quantityText:{
     fontSize: 17,
     fontWeight:'bold',
     paddingLeft:15
+  },
+
+  cartValidateButton:{
+    marginTop:35,
+    margin:10,
+    backgroundColor:'#00CDBC'
   }
 
 
