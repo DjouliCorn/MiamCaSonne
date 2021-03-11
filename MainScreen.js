@@ -3,6 +3,7 @@ import { StyleSheet, Button } from 'react-native';
 import { Text, View, Header, Container, Body, Item, Input, Left, Right, Content} from 'native-base';
 import CategorieSlider from './components/categorieSlider';
 import BannSlider from './components/bannSlider';
+import ListeRestos from './ListeRestos';
 
 export default class MainScreen extends React.Component {
 
@@ -12,7 +13,7 @@ export default class MainScreen extends React.Component {
     <Container>
       <CategorieSlider />
       <BannSlider />
-      
+
 
 
 
@@ -32,7 +33,8 @@ export default class MainScreen extends React.Component {
           title='Panier'
       />
         </View>
-    </Content>  
+    </Content>
+    
 </Container>
   
   )

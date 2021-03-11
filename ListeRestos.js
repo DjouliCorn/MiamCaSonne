@@ -10,7 +10,7 @@ const api = apirestos.create();
 export default class App extends React.Component {
 
     state = {
-        listRestos: []
+        listeRestos: []
     }
     constructor(props){
         super(props);
@@ -24,10 +24,10 @@ export default class App extends React.Component {
         const listRestosFetched = await api.getRestos()
         if(listRestosFetched.length>0){
             this.setState({
-                listRestos: listRestosFetched
+                listeRestos: listRestosFetched
             })
         }
-        console.log('liste Restos:', JSON.stringify(listRestos))
+        //console.log('liste Restos:', JSON.stringify(listeRestos))
     }
 
     render(){
@@ -35,13 +35,13 @@ export default class App extends React.Component {
             <View style={{ flex: 1, paddingTop: 20 }}>
 
                 <FlatList
-                    data={this.state.listRestos}
-                    keyExtractor={(item, index) => index}
-                    renderItem={({ item, index }) => <Text>{item.name}</Text>,
-                    <Image
-                    source={require({image})}
-                />}
-                    
+                    data={this.state.listeRestos}
+                    renderItem={({ item }) => 
+                    <View>
+                        <Text>{item.name}</Text>
+                        <Image source = {{uri: item.image}} style={styles.image}></Image>
+                    </View>
+                }                   
                 />
             </View>
         )
@@ -62,6 +62,12 @@ const styles = StyleSheet.create({
     title: {
       fontSize: 32,
     },
+    image: {
+        width:200, 
+        height:200,
+        resizeMode: 'cover',
+        borderRadius: 12
+      },
   });
 
 /*const DATA = [
