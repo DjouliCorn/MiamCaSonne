@@ -8,6 +8,8 @@ import AboutTheApp from './AboutTheApp'
 import UserInfos from './UserInfos'
 import Cart from './Cart'
 
+import PlatsChoisis from './components/platsChoisis'
+
 const StackNavigator = createStackNavigator(
   {
     Screen1: {screen: MainScreen},
@@ -27,6 +29,6 @@ const AppContainer = createAppContainer(StackNavigator);
 export default class App extends React.Component {
   
   render(){
-    return <AppContainer/>
+    return <PlatsChoisis />
   }
 }
