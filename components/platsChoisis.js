@@ -21,6 +21,14 @@ const styles = StyleSheet.create({
         backgroundColor:'white',
         borderRadius: 50
     },
+    iconResize:{
+        position: 'absolute',
+        top: 150, 
+        right: 10,
+        color:'white',
+        backgroundColor:'rgba(0, 0, 0, 0.5)',
+        borderRadius:5,
+    },
     agencementDescriptionPrix:{
         flex:1,
         flexDirection: 'row',
@@ -73,6 +81,7 @@ export default class PlatsChoisis extends React.Component{
             <Content style={styles.groupImage}>
                 <Image source={require('../assets/img-dish/calzone.jpeg')} style={styles.imageSize} />
                 <Ionicons name="close-outline" size={40} style={styles.iconClose}/>
+                <Ionicons name="resize-outline" size={35} style={styles.iconResize}/>
                 <Card style={styles.agencementDescriptionPrix}>
                     <View style={styles.nomDescription}>
                     <Text style={styles.nom}>Calzone</Text>
