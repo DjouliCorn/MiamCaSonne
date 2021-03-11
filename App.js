@@ -1,8 +1,10 @@
-import { StatusBar } from 'expo-status-bar';
+import 'react-native-gesture-handler';
 import React from 'react';
-import { StyleSheet, Text, View, Image, Container, SafeAreaView, ScrollView, RefreshControl } from 'react-native';
+import { StyleSheet, SafeAreaView, ScrollView, RefreshControl } from 'react-native';
 import CategorieSlider from './components/categorieSlider';
 import BannSlider from './components/bannSlider';
+
+
 
 const wait = (timeout) => {
   return new Promise(resolve => setTimeout(resolve, timeout));
@@ -26,11 +28,13 @@ export default function App() {
           onRefresh={onRefresh}
         />
       }>
-      <CategorieSlider style={styles.container} />
+      <CategorieSlider />
       <BannSlider />
-      </ScrollView>
+      </ScrollView>   
     </SafeAreaView>
+  
   );
+ 
 }
 
 const styles = StyleSheet.create({
