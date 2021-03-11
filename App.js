@@ -6,12 +6,15 @@ import {createStackNavigator} from 'react-navigation-stack'
 
 import MainScreen from './MainScreen'
 import AboutTheApp from './AboutTheApp'
+import UserInfos from './UserInfos'
 
 
 const StackNavigator = createStackNavigator(
   {
     Screen1: {screen: MainScreen},
     ScreenAbout: {screen: AboutTheApp},
+    ScreenUserinfos: {screen: UserInfos},
+
   },
   {
     headerMode: 'none'
@@ -71,4 +74,4 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
   },
-});
+});*/
