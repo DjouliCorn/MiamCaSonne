@@ -9,7 +9,8 @@ import AboutTheApp from './AboutTheApp'
 
 const StackNavigator = createStackNavigator(
   {
-    Screen1: {screen: AboutTheApp},
+    Screen1: {screen: MainScreen},
+    ScreenAbout: {screen: AboutTheApp},
   },
   {
     headerMode: 'none'

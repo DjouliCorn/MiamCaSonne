@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
-import { Text, View, Header, Container, Body, Item, Input, Center, Left, Right, Content } from 'native-base';
+import { StyleSheet, Button } from 'react-native';
+import { Text, View, Header, Container, Body, Item, Input, Left, Right, Content} from 'native-base';
 
 export default class MainScreen extends React.Component {
 
@@ -44,7 +44,12 @@ export default class MainScreen extends React.Component {
 
     <Content>  
         <View>
-      <Text>Miam, ça sonne !</Text>
+      <Text>Miam!</Text>
+      <Button 
+          onPress={() => this.props.navigation.navigate('ScreenAbout')} 
+          title='A propos'
+      />
+      <Text>test</Text>
         </View>
     </Content>  
 </Container>
