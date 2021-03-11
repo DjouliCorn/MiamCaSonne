@@ -14,7 +14,7 @@ const StackNavigator = createStackNavigator(
     ScreenAbout: {screen: AboutTheApp},
     ScreenUserInfos: {screen: UserInfos},
     ScreenCart : {screen: Cart}
-
+    
   },
   {
     headerMode: 'none'
