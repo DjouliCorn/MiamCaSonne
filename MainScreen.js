@@ -14,9 +14,6 @@ export default class MainScreen extends React.Component {
       <CategorieSlider />
       <BannSlider />
 
-
-
-
     <Content>  
         <View>
       <Button 

@@ -7,7 +7,7 @@ import apirestos from './apirestos'
 const {width, height} = Dimensions.get('screen');
 const api = apirestos.create();
 
-export default class App extends React.Component {
+export default class ListeRestos extends React.Component {
 
     state = {
         listeRestos: []
