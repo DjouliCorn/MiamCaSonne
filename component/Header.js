@@ -1,24 +1,39 @@
-import { Icon } from 'native-base';
-import React from 'react';
-import{StyleSheet, Text, View, ButtonGroup} from 'react-native';
-import { ToggleButton } from 'react-native-paper';
+import { Button} from 'native-base';
+import React, { useState } from 'react';
+import{StyleSheet, Text, View, TextInput, ScrollView } from 'react-native';
+import { ButtonGroup, SearchBar } from 'react-native-elements';
 
-import { MaterialIcons } from '@expo/vector-icons'; 
-import { AntDesign } from '@expo/vector-icons';
-import { FontAwesome } from '@expo/vector-icons';
 
+import { MaterialIcons, AntDesign, FontAwesome, SimpleLineIcons, Ionicons  } from '@expo/vector-icons'; 
 import Constant from 'expo-constants'
 
+
+
+
 export default class Header extends React.Component{
-    state = {
-        value:'left'
-    };
+   
+
+    constructor(){
+        super()
+        this.state={
+            selectedIndex:0,      
+        }
+        this.updateIndex = this.updateIndex.bind(this)
+    }
+
+    updateIndex (selectedIndex) {
+        this.setState({selectedIndex})    
+    }
+    
     render(){
+        const buttonsDeli = ['Livraison','A emporter']
+        const { selectedIndex } = this.state
+
         return(
             <View style={{
                 marginTop:Constant.statusBarHeight,
-                height:130,
-                backgroundColor:"#DEF3E9",
+                height:155,
+                backgroundColor:"white",
                 flexDirection:"column"
             }}>
                 <View style={{flex:1, flexDirection:"row", margin:8}}>
@@ -34,15 +49,38 @@ export default class Header extends React.Component{
                 </View>
                 <View>
                     <ButtonGroup
-                        onValueChange={value=>this.setState({value})}
-                        value={this.state.value} >
-                            <Button Text value="left" Text="Livraison"> </Button>
-                            <Button icon="format-align-right" value="right" />
-                    </ButtonGroup>
+                        buttons={buttonsDeli}
+                        onPress={this.updateIndex}
+                        selectedIndex={selectedIndex}
+                        containerStyle={{width:170, height:25, borderRadius:10, color:"#00CDBC", borderColor:"white"}}
+                        innerBorderStyle={{width: 6, color:"white"}}
+                        
+                        />
                 </View>
-                <View></View>
+                <View style={{flexDirection:"row"}}>
+                    <Button style={styles.searchBarStyle}>
+                        <SimpleLineIcons name="magnifier" size={18} color="grey"  />
+                    </Button>
+                    <Button transparent style={{marginLeft:50}}>
+                    <Ionicons name="filter" size={24} color="#00CDBC" />
+                    </Button>
+                </View>
+                
             </View>
         )
     }
 
 }
+const styles = StyleSheet.create({
+
+
+    searchBarStyle:{
+        width:300,
+        height:38,
+        marginTop:5,
+        marginLeft:8,
+        marginBottom:10,
+        backgroundColor:"#e6e8ea",
+        padding:5
+    }
+})
