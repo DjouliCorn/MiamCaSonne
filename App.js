@@ -1,4 +1,3 @@
-import 'react-native-gesture-handler';
 import React from 'react';
 import { StyleSheet, SafeAreaView, ScrollView, RefreshControl } from 'react-native';
 import CategorieSlider from './components/categorieSlider';
