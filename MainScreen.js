@@ -29,9 +29,11 @@ export default class MainScreen extends React.Component {
               onPress={() => this.props.navigation.navigate('ScreenCart')}
               title='Panier'
             />
+            
+           
           </View>
         </Content>
-        <ListeRestos />
+        <ListeRestos navigateToRestoPage={() => this.props.navigation.navigate('ScreenPageResto')}/>
       </Container>
 
     )

@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image, Dimensions, FlatList, ScrollView, SafeAreaView, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, Dimensions, FlatList, ScrollView, SafeAreaView, TouchableOpacity,Button } from 'react-native';
 import Constants from 'expo-constants';
 import apirestos from './apirestos';
 import PageResto from './PageResto';
@@ -17,13 +17,13 @@ export default class ListeRestos extends React.Component {
     state = {
         listeRestos: []
     }
-    constructor(props){
+    /*constructor(props){
         super(props);
         this.state = {
             
             dataSource: []
         }
-    }
+    }*/
 
     /*pressHandler = () => {
         const navigation = useNavigation();
@@ -51,14 +51,14 @@ export default class ListeRestos extends React.Component {
         return(
             
             <View style={{ flex: 1, paddingTop: 20 }}>
-
+                
+                    
                 <FlatList
                     horizontal
                     data={this.state.listeRestos}
-            
                     renderItem = {({ item, index }) =>  
                     <View >
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('ScreenAbout')} >
+                        <TouchableOpacity onPress={this.props.navigateToRestoPage}>
                         <Text>{item.name}</Text>
                         <Image source = {{uri: item.image}} style={styles.image}></Image>
                         </TouchableOpacity>

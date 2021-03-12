@@ -1,43 +1,111 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image, Dimensions, FlatList, ScrollView, SafeAreaView, TouchableOpacity } from 'react-native';
-const {width, height} = Dimensions.get('screen');
+import React from 'react';
+import { StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, View, Header, Container, Image, Left, Content, Footer } from 'native-base';
+import {Ionicons} from '@expo/vector-icons';
+import apirestos from './apirestos';
 
-const PageResto = ()=>{
-    //const {jsonResto} = route.params
+const api = apirestos.create();
 
-    return(
-        <View>
-            <Text>
-               Hello
-            </Text>
-        </View>
-    )
+
+export default class PageResto extends React.Component {
+
+    state = {
+        listeRestos: []
+    }
+    constructor(props){
+      super(props);
+      this.state = {
+          
+          dataSource: []
+      }
+    }
+    async componentDidMount(){
+        const listRestosFetched = await api.getRestos()
+        if(listRestosFetched.length>0){
+            this.setState({
+                listeRestos: listRestosFetched
+            })
+        }
+        //console.log('liste Restos:', JSON.stringify(listeRestos))
+    }
+
+  render(){
+
+    const {datadata} = this.state;
+  return (
+
+    
+
+    <Container>
+    <Header
+    style={{     
+      ...Platform.select({
+        ios: {
+          padding: 12,
+        },
+        android: {
+          paddingTop: 15
+        }
+      })
+    }} >
+
+  <TouchableOpacity
+    onPress={() => this.props.navigation.navigate('Screen1')}
+  >
+    <Ionicons name="arrow-back" size={20} color='#00CDBC' paddingRigth='10'/>
+  </TouchableOpacity>
+  <Text style={styles.aboutAppTextHeader}>Resto</Text>
+  <Text>Nom du restau selectionné</Text>
+
+</Header>
+
+    <View style={styles.aboutAppBody}>  
+    <Text></Text>
+    </View>  
+    <View >
+        <Text></Text>
+    </View>
+
+</Container>
+  
+  )
+    }
 }
 
-export default PageResto
+const styles = StyleSheet.create({
+  aboutAppBody:{
+    borderColor: 'black',
+    margin : 5,
+    padding : 15
+  }, 
+  aboutAppText: {
+    fontSize:15,
+    paddingLeft:15,
+    paddingBottom:15
+  },
+  aboutAppTouchable:{
+    flexDirection:'row'
+  }, 
 
-/*export default class PageResto extends React.Component {
+  aboutAppTextFooter:{
+    color:'#00CDBC',
+    fontWeight:'bold',
+  }, 
 
-    constructor(props){
-        super(props);
-        this.state = {
-            
-            dataSource: []
-        }
-    }
+  aboutAppTextFooterPadding:{
+    paddingBottom:20
+  },
 
-    render(){
-        return(
-            <View>
-                <StatusBar hidden />
-                <FlatList>
-                    <Text>
-                        Hello People
-                    </Text>
-                </FlatList>
-            </View>
-        )
-    }
+  aboutAppTextHeader:{
+    fontWeight:'bold',
+    paddingLeft:10
+  }, 
+  aboutAppFooter:{
+    flex:1,
+    flexDirection:'column',
+    padding:25
+    
 
-}*/
+  }
+
+});
