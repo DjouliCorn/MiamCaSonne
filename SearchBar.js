@@ -92,6 +92,7 @@ export default class SearchBar extends React.Component {
                                     <View style={{flexDirection:"column", justifyContent:"center", marginLeft:10}}>
                                         <Text style={{fontSize:20}}>{item.name}</Text>
                                         <Text>{item.categories}</Text>
+                                        <Text>{item.score} Rating</Text>
                                     </View>
                             </View>
                         </TouchableOpacity>
