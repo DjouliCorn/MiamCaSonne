@@ -43,6 +43,12 @@ export default class MainScreen extends React.Component {
           onPress={() => this.props.navigation.navigate('ScreenPayment')} 
           title='Moyen de paiement'
       />      
+
+<Button 
+          onPress={() => this.props.navigation.navigate('ScreenPlat')} 
+          title='Plat choisi'
+      />  
+
         </NView>
 </Container>
   

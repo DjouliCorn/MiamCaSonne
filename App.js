@@ -8,6 +8,7 @@ import AboutTheApp from './AboutTheApp'
 import UserInfos from './UserInfos'
 import Cart from './Cart'
 import MoyenPaiement from './MoyenPaiement'
+import PlatsChoisis from './platsChoisis'
 
 const StackNavigator = createStackNavigator(
   {
@@ -15,7 +16,9 @@ const StackNavigator = createStackNavigator(
     ScreenAbout: {screen: AboutTheApp},
     ScreenUserInfos: {screen: UserInfos},
     ScreenCart : {screen: Cart}, 
-    ScreenPayment : {screen: MoyenPaiement}
+    ScreenPayment : {screen: MoyenPaiement},
+    ScreenPlat : {screen: PlatsChoisis},
+    
     
   },
   {
