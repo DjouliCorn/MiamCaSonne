@@ -1,30 +1,52 @@
 import React from 'react';
-import { StyleSheet, Button, View} from 'react-native';
+import { StyleSheet, Button, View,  RefreshControl, ScrollView,} from 'react-native';
 import { View as NView, Container, Content} from 'native-base';
 import CategorieSlider from './components/categorieSlider';
 import BannSlider from './components/bannSlider';
-import HeaderLea from './components/Header'
+import HeaderLea from './components/Header';
+import { withNavigation } from 'react-navigation';
+
+const wait = (timeout) => {
+  return new Promise(resolve => setTimeout(resolve, timeout));
+}
 
 export default class MainScreen extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      refreshing: false,
+    };
+  }
+
+  _onRefresh = () => {
+    this.setState({refreshing: true});
+    wait(2000).then(() => {
+      this.setState({refreshing: false});
+    });
+  }
 
   render(){
   return (
 
+
     <Container>
     <View style={{flex:1}}>
-    <HeaderLea/>
+    <HeaderLea />
+    <ScrollView
+        refreshControl={
+          <RefreshControl
+            refreshing={this.state.refreshing}
+            onRefresh={this._onRefresh}
+          />
+        }
+    >
+    
     <CategorieSlider />
     <BannSlider />
+    </ScrollView>
     </View>
 
-
-    
-
-
-
-
-   
-        <NView>
+<NView>
       <Button 
           onPress={() => this.props.navigation.navigate('ScreenAbout')} 
           title='A propos'
@@ -54,7 +76,6 @@ export default class MainScreen extends React.Component {
   
   )
     }
-
 }
 
 const styles = StyleSheet.create({
