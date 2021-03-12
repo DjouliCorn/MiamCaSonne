@@ -6,18 +6,19 @@ import {createStackNavigator} from 'react-navigation-stack'
 import MainScreen from './MainScreen'
 import AboutTheApp from './AboutTheApp'
 import UserInfos from './UserInfos'
-import Cart from './Cart'
 import PlatsChoisis from './components/platsChoisis'
+import Cart from './Cart'
 
-import Test from './components/test1'
 
 const StackNavigator = createStackNavigator(
-  { ScreenTest: {screen: Test},
-    ScreenPlatsChoisis: {screen: PlatsChoisis},
-    Screen1: {screen: MainScreen},
+  {
+    /*Screen1: {screen: MainScreen},
     ScreenAbout: {screen: AboutTheApp},
-    ScreenUserInfos: {screen: UserInfos},
+  ScreenUserInfos: {screen: UserInfos},*/
+    
+    ScreenPlats: {screen: PlatsChoisis},
     ScreenCart : {screen: Cart},
+    
     
     
   },

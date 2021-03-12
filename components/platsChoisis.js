@@ -130,7 +130,7 @@ export default class PlatsChoisis extends React.Component{
             </Content>
                 <Footer style={styles.footer}>
                     <View style={styles.btn}>
-                    <Button title='Ajouter un article' color="#00CDBC" />
+                    <Button title='Ajouter un article' color="#00CDBC" onPress={() => this.props.navigation.navigate('ScreenPlats')}/>
                     </View>
                 </Footer>
             </Container> 
