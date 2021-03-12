@@ -10,6 +10,7 @@ import Cart from './Cart'
 import MoyenPaiement from './MoyenPaiement'
 import PlatsChoisis from './platsChoisis'
 import SearchResto from './SearchBar'
+import PageResto from './PageResto'
 
 
 
@@ -22,9 +23,9 @@ const StackNavigator = createStackNavigator(
     ScreenCart : {screen: Cart}, 
     ScreenPayment : {screen: MoyenPaiement},
     ScreenPlat : {screen: PlatsChoisis},
-    SearchResto:{screen:SearchResto}
-    
-    
+    SearchResto:{screen:SearchResto},
+    ScreenPageResto:{screen: PageResto}
+
 
   },
   {

@@ -31,7 +31,7 @@ export default class PageResto extends React.Component {
 
   render(){
 
-    const {datadata} = this.state;
+  //const {datadata} = this.state.listeRestos;
   return (
 
     

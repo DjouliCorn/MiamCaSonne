@@ -54,7 +54,6 @@ export default class ListeRestos extends React.Component {
                 
                     
                 <FlatList
-                    horizontal
                     data={this.state.listeRestos}
                     renderItem = {({ item, index }) =>  
                     <View >
@@ -86,7 +85,7 @@ const styles = StyleSheet.create({
       fontSize: 32,
     },
     image: {
-        width:200, 
+        width:width, 
         height:200,
         resizeMode: 'cover',
         borderRadius: 12

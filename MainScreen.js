@@ -5,6 +5,7 @@ import CategorieSlider from './components/categorieSlider';
 import BannSlider from './components/bannSlider';
 import HeaderLea from './components/Header';
 import { withNavigation } from 'react-navigation';
+import ListeRestos from './ListeRestos';
 
 const wait = (timeout) => {
   return new Promise(resolve => setTimeout(resolve, timeout));
@@ -43,6 +44,7 @@ export default class MainScreen extends React.Component {
     
     <CategorieSlider />
     <BannSlider />
+    <ListeRestos navigateToRestoPage={() => this.props.navigation.navigate('ScreenPageResto')}/>
     </ScrollView>
     </View>
 
@@ -55,16 +57,6 @@ export default class MainScreen extends React.Component {
           onPress={() => this.props.navigation.navigate('ScreenUserInfos')} 
           title='User Infos'
       />
-
-<Button 
-          onPress={() => this.props.navigation.navigate('ScreenCart')} 
-          title='Panier'
-      />
-
-<Button 
-          onPress={() => this.props.navigation.navigate('ScreenPayment')} 
-          title='Moyen de paiement'
-      />      
 
 <Button 
           onPress={() => this.props.navigation.navigate('ScreenPlat')} 
