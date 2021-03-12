@@ -22,7 +22,8 @@ export default class UserInfos extends React.Component {
             padding: 10,
           },
           android: {
-            paddingTop: 10
+            paddingTop: 10,
+            backgroundColor: 'white'
           }
         })
       }} >

@@ -16,7 +16,8 @@ export default class AboutTheApp extends React.Component {
           padding: 12,
         },
         android: {
-          paddingTop: 15
+          paddingTop: 15,
+          backgroundColor: 'white'
         }
       })
     }} >

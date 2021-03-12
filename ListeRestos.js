@@ -43,6 +43,19 @@ export default class ListeRestos extends React.Component {
         //console.log('liste Restos:', JSON.stringify(listeRestos))
     }
 
+    renderSeparator = () => {
+        return (
+          <View
+            style={{
+              height: 20,
+              width: '86%',
+              marginLeft: '5%'
+            }}
+          />
+        )
+      }
+    
+
     
 
     render(){
@@ -58,12 +71,14 @@ export default class ListeRestos extends React.Component {
                     renderItem = {({ item, index }) =>  
                     <View >
                         <TouchableOpacity onPress={this.props.navigateToRestoPage}>
-                        <Text>{item.name}</Text>
+                        <Text style={{fontSize: 20, paddingBottom: 8, paddingLeft:8}}>{item.name}</Text>
                         <Image source = {{uri: item.image}} style={styles.image}></Image>
                         </TouchableOpacity>
                     </View>
                     }      
                     keyExtractor={(item, index) => index.toString()}
+                    ItemSeparatorComponent={this.renderSeparator}
+
                 />
             </View>
         )

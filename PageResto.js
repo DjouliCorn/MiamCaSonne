@@ -54,8 +54,8 @@ export default class PageResto extends React.Component {
   >
     <Ionicons name="arrow-back" size={20} color='#00CDBC' paddingRigth='10'/>
   </TouchableOpacity>
-  <Text style={styles.aboutAppTextHeader}>Resto</Text>
-  <Text>Nom du restau selectionné</Text>
+  <Text style={styles.aboutAppTextHeader}>Burger King</Text>
+  
 
 </Header>
 
@@ -63,6 +63,7 @@ export default class PageResto extends React.Component {
     <Text></Text>
     </View>  
     <View >
+        
         <Text></Text>
     </View>
 
