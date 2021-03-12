@@ -10,6 +10,7 @@ import Cart from './Cart'
 import MoyenPaiement from './MoyenPaiement'
 import PlatsChoisis from './platsChoisis'
 
+
 const StackNavigator = createStackNavigator(
   {
     Screen1: {screen: MainScreen},
@@ -20,6 +21,7 @@ const StackNavigator = createStackNavigator(
     ScreenPlat : {screen: PlatsChoisis},
     
     
+
   },
   {
     headerMode: 'none'
