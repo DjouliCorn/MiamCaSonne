@@ -86,7 +86,7 @@ export default class PlatsChoisis extends React.Component{
             <Container>
             <Content>
                 <Image source={require('../assets/img-dish/calzone.jpeg')} style={styles.imageSize} />
-                <Ionicons name="close-outline" size={40} style={styles.iconClose}/>   
+                <Ionicons name="close-outline" size={40} style={styles.iconClose} onPress={() => this.props.navigation.goBack()}/>   
                 <Ionicons name="resize-outline" size={35} style={styles.iconResize} />
 
                 <Card style={styles.agencementDescriptionPrix}>
