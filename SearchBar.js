@@ -1,5 +1,5 @@
 import React  from 'react';
-import {View, Text, TextInput, Keyboard, StyleSheet, FlatList, TouchableOpacity,ActivityIndicator,Image} from 'react-native';
+import {View, Text, TextInput, Keyboard, StyleSheet, FlatList, TouchableOpacity,ActivityIndicator,Image,Dimensions} from 'react-native';
 import {AntDesign} from '@expo/vector-icons'; 
 import { StatusBar } from 'expo-status-bar';
 import Constant from 'expo-constants'
@@ -8,22 +8,21 @@ import _ from 'lodash'
 
 
 const api = apirestos.create();
+const {width, height} = Dimensions.get('screen');
 
 export default class SearchBar extends React.Component {
-    intervalID;
-   
-
+    state = {
+        listeRestos: [],
+        loading:true,
+    }
     // CONSTRUCTOR 
     constructor(props){
         super(props);
-        this.state={
-            loading:true,
-            listeRestos:[]       
-        }
     }
 
     //SHOW/UNSHOW KEYBOARD
-    componentDidMount(){
+    async componentDidMount(){
+        
         
         this.keyboardDidShowListener = Keyboard.addListener(
             'keyboardDidShow',
@@ -33,7 +32,12 @@ export default class SearchBar extends React.Component {
               'keyboardDidHide',
               this._keyboardDidHide,
             );
-           // this.getListResto(); 
+            const listRestosFetched = await api.getRestos()
+        if(listRestosFetched.length>0){
+            this.setState({
+                listeRestos: listRestosFetched
+            })
+        }
     }
     componentWillUnmount() {
         this.keyboardDidShowListener.remove();
@@ -41,22 +45,17 @@ export default class SearchBar extends React.Component {
         clearTimeout(this.intervalID);
     }
 
- getListResto(){
-        fetch("https://demo3431604.mockable.io/getRestos")
-            .then (response=> response.json())
-            .then ((responseData)=>{
-                this.setState({
-                    loading:false,
-                    listeRestos:responseData.data
-                })
-            })
-            .catch(error=>console.log(error))
-    }
-    showListresto(data){
-        <TouchableOpacity>
-            <Image source={data.image}/>
-        </TouchableOpacity>
-    }
+    renderSeparator = () => {
+        return (
+          <View
+            style={{
+              height: 20,
+              width: '86%',
+              marginLeft: '5%'
+            }}
+          />
+        )
+      }
     
     render(){
         return(
@@ -81,19 +80,25 @@ export default class SearchBar extends React.Component {
                     onSubmitEditing={Keyboard.dismiss}>
                 </TextInput>       
                 </View>
-                <View>
+                <View style={{height:height, marginTop:20}}>
                 <FlatList
                     vertical
-                    data={this.state.listeRestos}
-                    keyExtractor={(item, index) => index.toString()}    
+                    data={this.state.listeRestos}   
                     renderItem = {({ item, index }) =>  
                     <View >
                         <TouchableOpacity  >
-                        <Text>{item.name}</Text>
-                        <Image source = {{uri: item.image}} style={styles.image}></Image>
+                            <View style={{flexDirection:"row"}}>
+                                <Image source = {{uri: item.image}} style={styles.image}></Image>
+                                    <View style={{flexDirection:"column", justifyContent:"center", marginLeft:10}}>
+                                        <Text style={{fontSize:20}}>{item.name}</Text>
+                                        <Text>{item.categories}</Text>
+                                    </View>
+                            </View>
                         </TouchableOpacity>
                     </View>
-                    }      
+                    }
+                    keyExtractor={(item, index, categories) => index.toString()} 
+                    ItemSeparatorComponent={this.renderSeparator}      
                     
                 />
 
