@@ -1,14 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
-import{Card,Container, Content} from 'native-base';
+import { StyleSheet, Text, View, Image, Button } from 'react-native';
+import{Card,Container, Content, Footer} from 'native-base';
 import { Ionicons } from '@expo/vector-icons';
 
 
 const styles = StyleSheet.create({
-    groupImage:{
-        marginTop:40,
-        
-    },
     imageSize: {
     width: 400,
     height: 200,
@@ -70,18 +66,29 @@ const styles = StyleSheet.create({
         fontSize:25,
         fontWeight: 'bold',
     },
+
+    footer:{
+        justifyContent:'center',
+        alignItems:'center',
+        backgroundColor:'white'
+    },    
     
-    
+    btn:{
+        width: "90%", 
+        margin: 10,
+    },
   });
 
 export default class PlatsChoisis extends React.Component{
     render(){
         return(
+
             <Container>
-            <Content style={styles.groupImage}>
+            <Content>
                 <Image source={require('../assets/img-dish/calzone.jpeg')} style={styles.imageSize} />
-                <Ionicons name="close-outline" size={40} style={styles.iconClose}/>
-                <Ionicons name="resize-outline" size={35} style={styles.iconResize}/>
+                <Ionicons name="close-outline" size={40} style={styles.iconClose}/>   
+                <Ionicons name="resize-outline" size={35} style={styles.iconResize} />
+
                 <Card style={styles.agencementDescriptionPrix}>
                     <View style={styles.nomDescription}>
                     <Text style={styles.nom}>Calzone</Text>
@@ -96,12 +103,19 @@ export default class PlatsChoisis extends React.Component{
                 <Card style={styles.blocQuantite}>
                     <Ionicons name="remove-circle-outline" size={30} style={styles.btnMoins}/>
                     <Text style={styles.nbQuantite}>1</Text>
-                    <Ionicons name="add-circle-outline" size={30} style={styles.btnPlus}/>
-                    
-                </Card>
+                    <Ionicons name="add-circle-outline" size={30} style={styles.btnPlus}/>      
+                </Card>      
             </Content>
-            </Container>
-
+                <Footer style={styles.footer}>
+                    <View style={styles.btn}>
+                    <Button title='Ajouter un article' color="#00CDBC" />
+                    </View>
+                </Footer>
+            </Container> 
+          
+            
+            
+           
 
             
             
