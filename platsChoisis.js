@@ -2,6 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, Button, TextInput } from 'react-native';
 import{Card,Container, Content, Footer} from 'native-base';
 import { Ionicons } from '@expo/vector-icons';
+import { FlatList } from 'react-native-gesture-handler';
+import data from './data.json';
 
 
 const styles = StyleSheet.create({
@@ -35,7 +37,9 @@ const styles = StyleSheet.create({
     },
     nomDescription:{
         width:300,
-        paddingTop:10
+        paddingTop:10,
+        marginLeft:10,
+        alignContent:'center'
     },
     nom:{
         fontSize:25,
@@ -45,6 +49,8 @@ const styles = StyleSheet.create({
     },
     prix:{
         paddingTop:25,
+        marginLeft:100,
+        alignSelf:'center'
     },
     blocQuantite:{
         flex:1,
@@ -77,6 +83,9 @@ const styles = StyleSheet.create({
         width: "90%", 
         margin: 10,
     },
+    fontSize:{
+        fontSize:20,
+    }
   });
 
 export default class PlatsChoisis extends React.Component{
@@ -101,8 +110,10 @@ export default class PlatsChoisis extends React.Component{
           });
         return null;
         }
+        
 
     render(){
+        
         return(
 
             <Container>
@@ -111,35 +122,41 @@ export default class PlatsChoisis extends React.Component{
                 <Ionicons name="close-outline" size={40} style={styles.iconClose} onPress={() => this.props.navigation.goBack()}/>   
                 <Ionicons name="resize-outline" size={35} style={styles.iconResize} />
 
-                <Card style={styles.agencementDescriptionPrix}>
-                    <View style={styles.nomDescription}>
-                    <Text style={styles.nom}>Calzone</Text>
-                    <Text style={styles.description}>Sauce tomate, mozzarella, jambon, champignons, oeuf</Text>
-                    </View>
-                    <View style={styles.prix}>
-                        <Text style={{fontSize:20}}>15€</Text>
-                    </View>
-                </Card>  
+               <View>
+                   <FlatList 
+                   data={data}
+                   renderItem={({item}) => 
+                   <View style={styles.agencementDescriptionPrix}>
+                    <Content style={styles.nomDescription}>
+                   <Text style={styles.nom}>{item.name}</Text>
+                   <Text style={styles.description}>{item.description}</Text>
+                   </Content>
+                   <Content style={styles.prix}>
+                   <Text style={styles.fontSize}>{item.prix}€</Text>
+                   </Content>
+                   </View>
+                   }
+
+                   keyExtractor={(item, index) => index} 
+                    />
+                    
+                </View>
             </Content>
-            <Content >
+            <Content>
                 <Card style={styles.blocQuantite}>
                     <Ionicons name="remove-circle-outline" size={30} style={styles.btnMoins} onPress={this.DecreaseItem}/>
                     <Text style={styles.nbQuantite}>{ this.state.count }</Text>
                     <Ionicons name="add-circle-outline" size={30} style={styles.btnPlus} onPress={this.IncrementItem}/>      
                 </Card>      
             </Content>
-                <Footer style={styles.footer}>
-                    <View style={styles.btn}>
-                    <Button title='Ajouter un article' color="#00CDBC" onPress={() => this.props.navigation.navigate('ScreenCart')}/>
+                <FlatList 
+                 data={data}
+                 renderItem={({item}) =>
+                 <View style={styles.btn}>
+                <Button title='Ajouter un article' color="#00CDBC" onPress={() => navigation.navigate('ScreenCart', item)}/>
                     </View>
-                </Footer>
+                 }/>        
             </Container> 
-          
-            
-            
-           
-
-            
             
             
         );
