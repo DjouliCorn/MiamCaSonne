@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Button } from 'react-native';
+import { StyleSheet, Text, View, Image, Button, TextInput } from 'react-native';
 import{Card,Container, Content, Footer} from 'native-base';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -80,6 +80,28 @@ const styles = StyleSheet.create({
   });
 
 export default class PlatsChoisis extends React.Component{
+
+    constructor(props) {
+        super(props);
+        this.state = {
+          count: 0,
+        };
+    }
+
+    IncrementItem = () => {
+        this.setState({
+            count: this.state.count + 1
+          });
+        }
+
+    DecreaseItem = () => {
+        if(this.state.count > 0)
+        return this.setState({
+            count: this.state.count - 1
+          });
+        return null;
+        }
+
     render(){
         return(
 
@@ -101,9 +123,9 @@ export default class PlatsChoisis extends React.Component{
             </Content>
             <Content >
                 <Card style={styles.blocQuantite}>
-                    <Ionicons name="remove-circle-outline" size={30} style={styles.btnMoins}/>
-                    <Text style={styles.nbQuantite}>1</Text>
-                    <Ionicons name="add-circle-outline" size={30} style={styles.btnPlus}/>      
+                    <Ionicons name="remove-circle-outline" size={30} style={styles.btnMoins} onPress={this.DecreaseItem}/>
+                    <Text style={styles.nbQuantite}>{ this.state.count }</Text>
+                    <Ionicons name="add-circle-outline" size={30} style={styles.btnPlus} onPress={this.IncrementItem}/>      
                 </Card>      
             </Content>
                 <Footer style={styles.footer}>
