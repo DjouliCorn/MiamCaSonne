@@ -4,19 +4,13 @@ import { Text, View, Header, Container, Form, Input, Item, Left, Button, Label} 
 import {Ionicons} from '@expo/vector-icons';
 
 export default class UserInfos extends React.Component {
-  
-//  state = {
-//    isFocused: false,
-//  };
 
-//  handleFocus = () => this.setState({ isFocused: true });
-//  handleBlur = () => this.setState({ isFocused: false });
+
+
 
   render(){
-//    const { isFocused } = this.state;
-//    const labelStyle = {
-//      color: !isFocused ? '#00CDBC' : '#00CDBC',
-//    };
+
+
 
     return (
   
@@ -36,7 +30,7 @@ export default class UserInfos extends React.Component {
     <TouchableOpacity
       onPress={() => this.props.navigation.navigate('Screen1')}
     >
-      <Ionicons name="arrow-back" size={20} color='#00CDBC' paddingRigth='10'/>
+      <Ionicons name="arrow-back" size={25} color='#00CDBC' paddingRigth='10'/>
     </TouchableOpacity>
     <Text style={styles.userInfosTextHeader}>Confirmer adresse</Text>
   </Header>
@@ -48,7 +42,8 @@ export default class UserInfos extends React.Component {
     <Input/>
 </Item>
 <Item floatingLabel style={styles.userInfosItem}>  
-    <Label>N° d'appart / Nom de l'immuble (optionnel)</Label>
+    <Label>
+      N° d'appart / Nom de l'immuble (optionnel)</Label>
     <Input/>
 </Item>
 <Item floatingLabel style={styles.userInfosItem}>

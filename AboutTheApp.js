@@ -24,7 +24,7 @@ export default class AboutTheApp extends React.Component {
   <TouchableOpacity
     onPress={() => this.props.navigation.navigate('Screen1')}
   >
-    <Ionicons name="arrow-back" size={20} color='#00CDBC' paddingRigth='10'/>
+    <Ionicons name="arrow-back" size={25} color='#00CDBC' paddingRigth='10'/>
   </TouchableOpacity>
   <Text style={styles.aboutAppTextHeader}>À propos de notre application</Text>
 

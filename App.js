@@ -7,15 +7,21 @@ import MainScreen from './MainScreen'
 import AboutTheApp from './AboutTheApp'
 import UserInfos from './UserInfos'
 import Cart from './Cart'
-import PageResto from './PageResto'
+import MoyenPaiement from './MoyenPaiement'
+import PlatsChoisis from './platsChoisis'
+
 
 const StackNavigator = createStackNavigator(
   {
     Screen1: {screen: MainScreen},
     ScreenAbout: {screen: AboutTheApp},
     ScreenUserInfos: {screen: UserInfos},
-    ScreenCart : {screen: Cart},
-    ScreenPageResto : {screen: PageResto},
+    ScreenCart : {screen: Cart}, 
+    ScreenPayment : {screen: MoyenPaiement},
+    ScreenPlat : {screen: PlatsChoisis},
+    
+    
+
   },
   {
     headerMode: 'none'
