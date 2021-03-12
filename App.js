@@ -9,6 +9,9 @@ import UserInfos from './UserInfos'
 import Cart from './Cart'
 import MoyenPaiement from './MoyenPaiement'
 import PlatsChoisis from './platsChoisis'
+import SearchResto from './SearchBar'
+
+
 
 
 const StackNavigator = createStackNavigator(
@@ -19,13 +22,15 @@ const StackNavigator = createStackNavigator(
     ScreenCart : {screen: Cart}, 
     ScreenPayment : {screen: MoyenPaiement},
     ScreenPlat : {screen: PlatsChoisis},
+    SearchResto:{screen:SearchResto}
     
     
 
   },
   {
-    headerMode: 'none'
-  }
+    headerMode: 'none',
+    
+  },
 )
 
 const AppContainer = createAppContainer(StackNavigator);

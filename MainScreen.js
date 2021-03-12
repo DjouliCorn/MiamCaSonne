@@ -31,7 +31,7 @@ export default class MainScreen extends React.Component {
 
     <Container>
     <View style={{flex:1}}>
-    <HeaderLea />
+    <HeaderLea navigateToSearch={() => this.props.navigation.navigate('SearchResto')}/>
     <ScrollView
         refreshControl={
           <RefreshControl
