@@ -5,9 +5,12 @@ import Constants from 'expo-constants';
 import apirestos from './apirestos';
 import PageResto from './PageResto';
 import { withNavigation } from 'react-navigation';
+import { useNavigation } from '@react-navigation/native';
 
 const {width, height} = Dimensions.get('screen');
 const api = apirestos.create();
+
+
 
 export default class ListeRestos extends React.Component {
 
@@ -16,12 +19,19 @@ export default class ListeRestos extends React.Component {
     }
     constructor(props){
         super(props);
-
         this.state = {
             
             dataSource: []
         }
     }
+
+    /*pressHandler = () => {
+        const navigation = useNavigation();
+        return(
+        navigation.navigate("ScreenAbout")
+        )
+    }*/
+
 
     async componentDidMount(){
         const listRestosFetched = await api.getRestos()
@@ -33,19 +43,22 @@ export default class ListeRestos extends React.Component {
         //console.log('liste Restos:', JSON.stringify(listeRestos))
     }
 
- 
+    
 
     render(){
+
+
         return(
             
             <View style={{ flex: 1, paddingTop: 20 }}>
 
                 <FlatList
+                    horizontal
                     data={this.state.listeRestos}
             
-                    renderItem={({ item, index }) => 
-                    <View>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('PageResto')}>
+                    renderItem = {({ item, index }) =>  
+                    <View >
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('ScreenAbout')} >
                         <Text>{item.name}</Text>
                         <Image source = {{uri: item.image}} style={styles.image}></Image>
                         </TouchableOpacity>
@@ -54,7 +67,6 @@ export default class ListeRestos extends React.Component {
                     keyExtractor={(item, index) => index.toString()}
                 />
             </View>
-
         )
     }
 }

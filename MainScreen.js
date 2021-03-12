@@ -7,35 +7,35 @@ import ListeRestos from './ListeRestos';
 
 export default class MainScreen extends React.Component {
 
-  render(){
-  return (
+  render() {
+    return (
 
-    <Container>
-      <CategorieSlider />
-      <BannSlider />
+      <Container>
+        <CategorieSlider />
+        <BannSlider />
 
-    <Content>  
-        <View>
-      <Button 
-          onPress={() => this.props.navigation.navigate('ScreenAbout')} 
-          title='A propos'
-      />
-            <Button 
-          onPress={() => this.props.navigation.navigate('ScreenUserInfos')} 
-          title='User Infos'
-      />
+        <Content>
+          <View>
+            <Button
+              onPress={() => this.props.navigation.navigate('ScreenAbout')}
+              title='A propos'
+            />
+            <Button
+              onPress={() => this.props.navigation.navigate('ScreenUserInfos')}
+              title='User Infos'
+            />
 
-<Button 
-          onPress={() => this.props.navigation.navigate('ScreenCart')} 
-          title='Panier'
-      />
-        </View>
-    </Content>
-    
-</Container>
-  
-  )
-    }
+            <Button
+              onPress={() => this.props.navigation.navigate('ScreenCart')}
+              title='Panier'
+            />
+          </View>
+        </Content>
+        <ListeRestos />
+      </Container>
+
+    )
+  }
 }
 
 const styles = StyleSheet.create({

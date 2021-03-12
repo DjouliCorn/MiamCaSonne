@@ -7,13 +7,14 @@ import MainScreen from './MainScreen'
 import AboutTheApp from './AboutTheApp'
 import UserInfos from './UserInfos'
 import Cart from './Cart'
+import ListeRestos from './ListeRestos'
 
 const StackNavigator = createStackNavigator(
   {
     Screen1: {screen: MainScreen},
     ScreenAbout: {screen: AboutTheApp},
     ScreenUserInfos: {screen: UserInfos},
-    ScreenCart : {screen: Cart}
+    ScreenCart : {screen: Cart},
     
   },
   {
