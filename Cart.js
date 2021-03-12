@@ -5,7 +5,7 @@ import { MaterialIcons, Ionicons  } from '@expo/vector-icons';
 
 
 export default class Cart extends React.Component {
-  render(){
+  render({navigation}){
   return (
     <Container>
     <Header style={styles.headerStyle}> 
@@ -36,7 +36,7 @@ export default class Cart extends React.Component {
       <Text style={styles.articlesText} >Articles</Text>
       <View style={styles.contentTimeDelivery}>
       <Text style={styles.quantityText} >QTÉ</Text>
-      <Text style={styles.textContentItemDelivery}>Plat séléctionné
+      <Text style={styles.textContentItemDelivery}>{navigation.getParam('name')}
       </Text>
       <Text style={styles.textContentItemDelivery}>Prix</Text>
       </View>

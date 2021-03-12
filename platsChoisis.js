@@ -113,8 +113,6 @@ export default class PlatsChoisis extends React.Component{
         
 
     render(){
-
-       
         
         return(
 
@@ -151,11 +149,13 @@ export default class PlatsChoisis extends React.Component{
                     <Ionicons name="add-circle-outline" size={30} style={styles.btnPlus} onPress={this.IncrementItem}/>      
                 </Card>      
             </Content>
-                <Footer style={styles.footer}>
-                    <View style={styles.btn}>
-                    <Button title='Ajouter un article' color="#00CDBC" onPress={() => this.props.navigation.navigate('ScreenCart')}/>
+                <FlatList 
+                 data={data}
+                 renderItem={({item}) =>
+                 <View style={styles.btn}>
+                <Button title='Ajouter un article' color="#00CDBC" onPress={() => navigation.navigate('ScreenCart', item)}/>
                     </View>
-                </Footer>
+                 }/>        
             </Container> 
             
             

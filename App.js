@@ -6,9 +6,9 @@ import {createStackNavigator} from 'react-navigation-stack'
 import MainScreen from './MainScreen'
 import AboutTheApp from './AboutTheApp'
 import UserInfos from './UserInfos'
-import Cart from './Cart'
+import Cart from './Cart2'
 import MoyenPaiement from './MoyenPaiement'
-import PlatsChoisis from './platsChoisis'
+import PlatsChoisis from './platsChoisis2'
 
 const StackNavigator = createStackNavigator(
   {
