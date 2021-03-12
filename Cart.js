@@ -32,13 +32,11 @@ export default class Cart extends React.Component {
         <Text style={styles.textCondParticulier}>Précisions particulières sur la commande</Text>
         </TouchableOpacity>
       </View>
-
       <Text style={styles.articlesText} >Articles</Text>
       <View style={styles.contentTimeDelivery}>
-      <Text style={styles.quantityText} >QTÉ</Text>
-      <Text style={styles.textContentItemDelivery}>Plat séléctionné
-      </Text>
-      <Text style={styles.textContentItemDelivery}>Prix</Text>
+        <Text style={styles.quantityText} >QTÉ</Text>
+        <Text style={styles.textContentItemDelivery}>Plat séléctionné</Text>
+        <Text style={styles.textContentItemDelivery}>Prix</Text>
       </View>
 
  

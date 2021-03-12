@@ -12,18 +12,10 @@ export default class MainScreen extends React.Component {
 
     <Container>
     <View style={{flex:1}}>
-    <HeaderLea/>
+    <HeaderLea navigateToSearch={() => this.props.navigation.navigate('SearchResto')}/>
     <CategorieSlider />
     <BannSlider />
-    </View>
-
-
-    
-
-
-
-
-    <Content>  
+    </View>  
         <NView>
       <Button 
           onPress={() => this.props.navigation.navigate('ScreenAbout')} 
@@ -43,8 +35,7 @@ export default class MainScreen extends React.Component {
           onPress={() => this.props.navigation.navigate('ScreenPayment')} 
           title='Moyen de paiement'
       />      
-        </NView>
-    </Content>  
+        </NView>  
 </Container>
   
   )

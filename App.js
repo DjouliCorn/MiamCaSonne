@@ -8,6 +8,10 @@ import AboutTheApp from './AboutTheApp'
 import UserInfos from './UserInfos'
 import Cart from './Cart'
 import MoyenPaiement from './MoyenPaiement'
+import SearchResto from './SearchBar'
+
+
+
 
 const StackNavigator = createStackNavigator(
   {
@@ -15,12 +19,15 @@ const StackNavigator = createStackNavigator(
     ScreenAbout: {screen: AboutTheApp},
     ScreenUserInfos: {screen: UserInfos},
     ScreenCart : {screen: Cart}, 
-    ScreenPayment : {screen: MoyenPaiement}
+    ScreenPayment : {screen: MoyenPaiement},
+    SearchResto:{screen:SearchResto}
+    
     
   },
   {
-    headerMode: 'none'
-  }
+    headerMode: 'none',
+    
+  },
 )
 
 const AppContainer = createAppContainer(StackNavigator);

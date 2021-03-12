@@ -1,7 +1,8 @@
 import { Button} from 'native-base';
 import React, { useState } from 'react';
 import{StyleSheet, Text, View, TextInput, ScrollView } from 'react-native';
-import { ButtonGroup, SearchBar } from 'react-native-elements';
+import { ButtonGroup} from 'react-native-elements';
+
 
 
 import { MaterialIcons, AntDesign, FontAwesome, SimpleLineIcons, Ionicons  } from '@expo/vector-icons'; 
@@ -9,12 +10,11 @@ import Constant from 'expo-constants'
 
 
 
-
 export default class Header extends React.Component{
    
 
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state={
             selectedIndex:0,      
         }
@@ -58,7 +58,9 @@ export default class Header extends React.Component{
                         />
                 </View>
                 <View style={{flexDirection:"row"}}>
-                    <Button style={styles.searchBarStyle}>
+                    <Button style={styles.searchBarStyle}
+                            onPress={this.props.navigateToSearch}
+                        >
                         <SimpleLineIcons name="magnifier" size={18} color="grey"  />
                     </Button>
                     <Button transparent style={{marginLeft:50}}>
